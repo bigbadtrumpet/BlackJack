@@ -32,7 +32,6 @@ namespace BlackJack
             var results = round.GetRoundResults();
             m_Deck.Shuffle();
             return results;
-
         }
 
         public string GetPlayerSummary()

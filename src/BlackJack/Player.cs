@@ -105,6 +105,11 @@ namespace BlackJack
         public int HandsPlayed { get; private set; }
         public float MaxMoney { get; private set; }
         public float MinMoney { get; private set; }
+        public string Name { get; }
+
+        public abstract float GetBet();
+        public abstract Move GetMove(IEnumerable<Card> currentCards, Card dealerShownCard);
+
         public void HandleResult(float money)
         {
             HandsPlayed++;
@@ -117,13 +122,9 @@ namespace BlackJack
             MinMoney = Math.Min(MinMoney, CashOnHand);
         }
 
-        public abstract float GetBet();
-        public abstract Move GetMove(IEnumerable<Card> currentCards, Card dealerShownCard);
         public virtual void HandleCard(Card card)
         {
 
         }
-
-        public string Name { get; }
     }
 }

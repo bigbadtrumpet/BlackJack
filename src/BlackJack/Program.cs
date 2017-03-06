@@ -6,7 +6,8 @@ namespace BlackJack
     {
         private static readonly int LineSeperatorCount = 30;
         private static readonly int MinNumberOfComputers = 1;
-        private static readonly int MaxNumberOfComputers = 5;
+        private static readonly int MaxNumberOfComputers = 15;
+
         public delegate bool ConirmationFunc<T>(string input, out T value);
 
         public static void Main(string[] args)
@@ -32,8 +33,8 @@ namespace BlackJack
             Console.WriteLine($"Total summary\n{new string('-', LineSeperatorCount)}");
             var summary = game.GetPlayerSummary();
             Console.WriteLine(summary);
-            Console.WriteLine("Press any key to exit");
-            Console.ReadLine();
+            Console.WriteLine("Press enter to exit");
+            Console.Read();
         }
 
         private static bool ValidUserName(string input, out string value)
