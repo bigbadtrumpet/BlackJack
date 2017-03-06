@@ -97,6 +97,7 @@ namespace BlackJack
         {
             CashOnHand = startingCash;
             Name = name;
+            MinMoney = MaxMoney = startingCash;
         }
 
         public float CashOnHand { get; private set; }
